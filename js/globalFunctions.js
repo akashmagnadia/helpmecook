@@ -1,5 +1,7 @@
 function addHTMLLinesToCodeScreen(element, linesToAdd) {
+    let str = '';
     for (let i = 0; i < linesToAdd.length; i++) {
-        element.innerHTML += linesToAdd[i];
+        str += linesToAdd[i];
     }
+    element.innerHTML += str;
 }
