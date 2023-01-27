@@ -1,7 +1,8 @@
-:root {
-    --graphAndCodeHeight: 62vh;
-    --filterButtonHeight: 20vh;
-    --titleHeight: 4vh;
+@media only screen and (max-width: 620px) {
+    /* For mobile phones: */
+    #recipe_ingredient .d-row {
+        flex-direction: column;
+    }
 }
 
 body {
@@ -10,7 +11,7 @@ body {
     font-weight: 500;
 }
 
-h1, h2 {
+h1, h2, h3 {
     align-self: center;
     margin: 5px;
     color: rgba(0, 0, 0, 0.83);
@@ -32,10 +33,6 @@ h1, h2 {
 
 .d-center {
     justify-content: center;
-}
-
-.d-wrap {
-    flex-wrap: wrap;
 }
 
 .floatLeft {
@@ -78,11 +75,11 @@ h1, h2 {
 }
 
 #recipe_list {
-    flex: 6;
+    flex: 7;
 }
 
 #ingredients {
-    flex: 4;
+    flex: 3;
 }
 
 #recipe_ingredient {
@@ -100,6 +97,7 @@ h1, h2 {
 }
 
 input[type="checkbox"] {
+
     appearance: none;
     background-color: white;
 
