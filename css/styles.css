@@ -91,9 +91,7 @@ h1, h2, h3 {
     grid-template-columns: 1em auto;
     gap: 0.6em;
     align-items: center;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    margin-left: 30px;
+    margin-bottom: 3px;
 }
 
 input[type="checkbox"] {
@@ -125,4 +123,9 @@ input[type="checkbox"]::before {
 
 input[type="checkbox"]:checked::before {
     transform: scale(1);
+}
+
+#spices_checkBoxes, #vegetables_checkBoxes {
+    padding-left: 10px;
+    padding-right: 10px;
 }
