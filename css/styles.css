@@ -3,6 +3,10 @@
     #recipe_ingredient .d-row {
         flex-direction: column;
     }
+
+    #spices_checkBoxes, #vegetables_checkBoxes {
+        margin-top: 15px;
+    }
 }
 
 body {
@@ -126,6 +130,9 @@ input[type="checkbox"]:checked::before {
 }
 
 #spices_checkBoxes, #vegetables_checkBoxes {
+    margin-left: 15px;
     padding-left: 10px;
     padding-right: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 4px 4px 1px #c1bebe;
 }
