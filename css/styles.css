@@ -146,3 +146,34 @@ input[type="checkbox"]:checked::before {
     box-shadow: 3px 4px 6px 2px #c1bebe;
     align-self: center;
 }
+
+.accordion {
+    border-radius: inherit;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.up_arrow, .down_arrow {
+    position: absolute;
+    font-size: 0;
+    margin-top: 5px;
+    text-align: end;
+    width: 94%;
+    transition: font-size 0.2s;
+}
+
+.up_arrow {
+    font-size: 2em;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.accordion_active, .accordion:hover {
+    background-color: #eee;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}

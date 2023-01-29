@@ -10,8 +10,6 @@ function generateCheckBox(text, element) {
         addHTMLLinesToCodeScreen(element,
             ['<label class="checkbox" id="checkbox_btn_' + idName + '"> <input type="checkbox" id="checkbox_name_' + idName + '" checked> ' + fullName + ' </label>']);
     }
-
-    // trim space for id but keep for name
 }
 
 function generateHTML_Ingredients() {

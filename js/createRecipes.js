@@ -38,6 +38,8 @@ async function generateHTML_SpicesCard() {
         let description = (await titleDesc).desc;
 
         let linesToAdd = [];
+
+        //TODO: Fix this with new setup
         linesToAdd.push('<div class="container d-col d-wrap float" id="recipe_' + title.replace(/ /g,'') + '">');
         linesToAdd.push('<div class="container d-row d-nowrap">');
         linesToAdd.push('<img class="floatingImg" src="' + imgPath + '" alt="..."/>');

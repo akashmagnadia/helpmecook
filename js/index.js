@@ -1,2 +1,2 @@
 generateHTML_Ingredients()
-generateHTML_SpicesCard()
+// generateHTML_SpicesCard()
