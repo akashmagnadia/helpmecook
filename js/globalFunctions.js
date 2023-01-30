@@ -38,3 +38,14 @@ function updateRecipeFilter() {
         // move to the next recipe in the ingredient listing
     }
 }
+
+function firstLetterUppercase(sentence) {
+    const words = mySentence.split(" ");
+    let str = "";
+
+    for (let i = 0; i < words.length; i++) {
+        str += words[i][0].toUpperCase() + words[i].substr(1) + " ";
+    }
+
+    return str;
+}
