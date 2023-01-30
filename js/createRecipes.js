@@ -1,3 +1,5 @@
+let recipesList = [];
+
 async function getJson(metaFilePath) {
     return fetch(metaFilePath)
         .then((response) => response.json())
@@ -61,7 +63,6 @@ async function getInstructionsList(path, ingredientsList) {
                 const replaceMask = '<b> ' + searchMask + '</b>';
 
                 str = str.replace(regEx, replaceMask);
-                console.log(str);
             }
             linesToAdd.push('<li>' + str + '</li>');
         }
@@ -73,7 +74,7 @@ async function getInstructionsList(path, ingredientsList) {
 async function generateHTML_SpicesCard() {
     let json_recipes = await getJson('information/recipe/meta_data.json');
 
-    for (let i = 1; i < json_recipes.recipes + 1; i++) {
+    for (let i = 0; i < json_recipes.recipes; i++) {
         let imgPath = 'information/recipe/recipe_' + i + '/dish_img.jpg';
         let titleDescPath = 'information/recipe/recipe_' + i + '/title_desc.txt';
 
@@ -81,9 +82,16 @@ async function generateHTML_SpicesCard() {
         let title = (await titleDesc).title;
         let description = (await titleDesc).desc;
 
+        let [ingredientsList, ingredientsFullNameList] = await getIngredientsList('information/recipe/recipe_' + i + '/ingredients.json')
+        let instructionsToPush = await getInstructionsList('information/recipe/recipe_' + i + '/instructions.txt', ingredientsList)
+
+        recipesList.push(new recipe(
+            'recipe_' + i,
+            title, description, ingredientsList, ingredientsFullNameList));
+
         let linesToAdd = [];
 
-        linesToAdd.push('<div class="container d-col d-wrap float" id="recipe_' + title.replace(/ /g,'') + '">');
+        linesToAdd.push('<div class="container d-col d-wrap float" id="recipe_' + i + '">');
         linesToAdd.push('<div class="accordion">');
         linesToAdd.push('<div class="container d-row d-nowrap">');
         linesToAdd.push('<img class="floatingImg" src="' + imgPath + '" alt="..."/>');
@@ -99,7 +107,6 @@ async function generateHTML_SpicesCard() {
         linesToAdd.push('<b class="ingredients_title"> Things you will need: </b>');
         linesToAdd.push('<ul class="ingredients_in_instructions">');
         // add ingredients for a recipe
-        let [ingredientsList, ingredientsFullNameList] = await getIngredientsList('information/recipe/recipe_' + i + '/ingredients.json')
         for (let j = 0; j < ingredientsFullNameList.length; j++) {
             linesToAdd.push('<li>' + ingredientsFullNameList[j] + '</li>');
         }
@@ -108,7 +115,6 @@ async function generateHTML_SpicesCard() {
         linesToAdd.push('<b class="instructions_title"> Instructions: </b>');
         linesToAdd.push('<ol class="instructions">');
         // add instructions for a recipe
-        let instructionsToPush = await getInstructionsList('information/recipe/recipe_' + i + '/instructions.txt', ingredientsList)
         for (let j = 0; j < instructionsToPush.length; j++) {
             linesToAdd.push(instructionsToPush[j]);
         }
