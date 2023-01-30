@@ -1,6 +1,4 @@
-Vegetable 1
-Vegetable 2
-Vegetable 3
-Vegetable 4
-Vegetable 5
-Vegetable 6
+Cabbage
+Red Pepper
+Green Pepper
+Yellow Pepper

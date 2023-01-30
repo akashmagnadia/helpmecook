@@ -1,3 +1,6 @@
+let spicesList = [];
+let vegList = [];
+
 function generateCheckBox(text, element) {
     let arr = text.split(/\r?\n/);
 

@@ -5,7 +5,6 @@ function build_accordion_listeners() {
     const acc = document.getElementsByClassName("accordion");
     let i;
 
-    console.log(acc.length);
     for (i = 0; i < acc.length; i++) {
         acc[i].addEventListener("click", function() {
             this.classList.toggle("accordion_active");

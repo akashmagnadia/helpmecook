@@ -1,3 +1,0 @@
-ingredient one
-ingredient two
-ingredient three
