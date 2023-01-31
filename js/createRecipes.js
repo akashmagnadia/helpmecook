@@ -117,7 +117,7 @@ async function generateHTML_SpicesCard(function1) {
         linesToAdd.push('<div class="down_arrow">&#8659;</div>');
         linesToAdd.push('<div class="up_arrow">&#8657;</div>');
         linesToAdd.push('<h3 style="align-self: unset; margin-top: 15px;"> ' + title + ' </h3>');
-        linesToAdd.push('<p style="margin: 5px;">');
+        linesToAdd.push('<p class="recipe_description">');
         linesToAdd.push(description);
         linesToAdd.push('</p> </div> </div> </div>');
 

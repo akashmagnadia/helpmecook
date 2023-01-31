@@ -1,6 +1,6 @@
 // input them in lowercase
 // this assumes that you always have the following items
-let ingredientsToIgnoreForCheckbox = ["water"];
+let ingredientsToIgnoreForCheckbox = ["water", "instant pot", "stackable container"];
 
 function listener_IngredientsCheckBox() {
     for (let i = 0; i < ingredientsList.length; i++) {
