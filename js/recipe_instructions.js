@@ -14,7 +14,7 @@ function build_accordion_listeners() {
                 panel.style.maxHeight = null;
                 panel.style.marginTop = "0px";
             } else {
-                panel.style.maxHeight = panel.scrollHeight + "px";
+                panel.style.maxHeight = (panel.scrollHeight + 10) + "px";
                 panel.style.marginTop = "10px";
             }
 
