@@ -13,18 +13,18 @@ function updateRecipeFilter() {
 
         let recipeContainer = document.getElementById(recipesList[i].recipeID);
         recipeContainer.style.display = "unset";
-        // make the recipe visible from the start, then remove if after checking
+        // make the recipes visible from the start, then remove if after checking
 
 
         for (let j = 0; j < recipesList[i].ingredientsList.length; j++) {
-            // check ingredients for the recipe with available ingredients
+            // check ingredients for the recipes with available ingredients
             for (let k = 0; k < ingredientsList.length; k++) {
 
                 // if one of the ingredient is missing
                 if (recipesList[i].ingredientsList[j].toLowerCase() === ingredientsList[k].nameIngr.toLowerCase() &&
                     ingredientsList[k].isAvailable === false) {
 
-                    // make the recipe disappear
+                    // make the recipes disappear
                     recipeContainer.style.display = "none";
 
                     // no need to check other ingredients if one is already missing
@@ -35,9 +35,9 @@ function updateRecipeFilter() {
                 }
             }
 
-            // move to the next ingredient from the recipe
+            // move to the next ingredient from the recipes
         }
-        // move to the next recipe in the ingredient listing
+        // move to the next recipes in the ingredient listing
     }
 }
 

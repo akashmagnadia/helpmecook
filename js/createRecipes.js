@@ -92,18 +92,18 @@ async function getInstructionsList(path, ingredientsList) {
 }
 
 async function generateHTML_SpicesCard(function1) {
-    let json_recipes = await getJson('information/recipe/meta_data.json');
+    let json_recipes = await getJson('recipes/meta_data.json');
 
     for (let i = 0; i < json_recipes.recipes; i++) {
-        let imgPath = 'information/recipe/recipe_' + i + '/dish_img.jpg';
-        let titleDescPath = 'information/recipe/recipe_' + i + '/title_desc.txt';
+        let imgPath = 'recipes/recipe_' + i + '/backgroundImage.jpg';
+        let titleDescPath = 'recipes/recipe_' + i + '/title_desc.txt';
 
         let titleDesc = getTileDesc(titleDescPath);
         let title = (await titleDesc).title;
         let description = (await titleDesc).desc;
 
-        let [recipeIngredientsList, ingredientsFullNameList] = await getRecipeIngredientsList('information/recipe/recipe_' + i + '/ingredients.json')
-        let instructionsToPush = await getInstructionsList('information/recipe/recipe_' + i + '/instructions.txt', recipeIngredientsList)
+        let [recipeIngredientsList, ingredientsFullNameList] = await getRecipeIngredientsList('recipes/recipe_' + i + '/ingredients.json')
+        let instructionsToPush = await getInstructionsList('recipes/recipe_' + i + '/instructions.txt', recipeIngredientsList)
 
         recipesList.push(new recipe('recipe_' + i, title, description, recipeIngredientsList, ingredientsFullNameList));
 
@@ -124,7 +124,7 @@ async function generateHTML_SpicesCard(function1) {
         linesToAdd.push('<div class="ingredients_instructions">');
         linesToAdd.push('<b class="ingredients_title"> Things you will need: </b>');
         linesToAdd.push('<ul class="ingredients_in_instructions">');
-        // add ingredients for a recipe
+        // add ingredients for a recipes
         for (let j = 0; j < ingredientsFullNameList.length; j++) {
             linesToAdd.push('<li>' + ingredientsFullNameList[j] + '</li>');
         }
@@ -132,7 +132,7 @@ async function generateHTML_SpicesCard(function1) {
 
         linesToAdd.push('<b class="instructions_title"> Instructions: </b>');
         linesToAdd.push('<ol class="instructions">');
-        // add instructions for a recipe
+        // add instructions for a recipes
         for (let j = 0; j < instructionsToPush.length; j++) {
             linesToAdd.push(instructionsToPush[j]);
         }
