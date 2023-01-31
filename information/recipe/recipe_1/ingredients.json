@@ -1,18 +1,32 @@
 [
     {
         "quantity": "",
-        "item": "Salt"
+        "item": "Salt",
+        "type": "spice"
     },
     {
         "quantity": "",
-        "item": "Black Pepper"
+        "item": "Black Pepper",
+        "type": "spice"
     },
     {
         "quantity": "",
-        "item": "Red Spice"
+        "item": "Red Spice",
+        "type": "spice"
     },
     {
         "quantity": "1/2 cup",
-        "item": "Water"
+        "item": "Water",
+        "type": "other"
+    },
+    {
+        "quantity": "",
+        "item": "Red Pepper",
+        "type": "veg"
+    },
+    {
+        "quantity": "",
+        "item": "Green Pepper",
+        "type": "veg"
     }
 ]

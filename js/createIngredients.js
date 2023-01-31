@@ -1,56 +1,50 @@
-let ingredientsList = [];
+// input them in lowercase
+// this assumes that you always have the following items
+let ingredientsToIgnoreForCheckbox = ["water"];
 
 function listener_IngredientsCheckBox() {
     for (let i = 0; i < ingredientsList.length; i++) {
         if (ingredientsList[i].idIngr != null) {
 
-            document.getElementById(ingredientsList[i].idIngr)
-                .addEventListener('change', function() {
-                    ingredientsList[i].isAvailable = this.checked;
+            if (ingredientsToIgnoreForCheckbox.includes(ingredientsList[i].nameIngr.toLowerCase())) {
+                continue;
+            }
 
+            document.getElementById("checkbox_name_" + ingredientsList[i].idIngr)
+                .addEventListener('change', function () {
+                    ingredientsList[i].isAvailable = this.checked;
                     updateRecipeFilter();
                 });
         }
     }
 }
 
-function generateCheckBox(text, element, ingr) {
-    let arr = text.split(/\r?\n/);
-
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === "") { continue; }
-
-        let fullName = arr[i];
-        let idName = fullName.replace(/ /g,'')
-
-        addHTMLLinesToCodeScreen(element,
-            ['<label class="checkbox" id="checkbox_btn_' + idName + '"> <input type="checkbox" id="checkbox_name_' + idName + '" checked> ' + fullName + ' </label>']);
-
-        if (ingr === "Spice") {
-            ingredientsList.push(new ingredients('checkbox_name_' + idName, fullName, true, false));
-        } else if (ingr === "Veg") {
-            ingredientsList.push(new ingredients('checkbox_name_' + idName, fullName, false, true));
-        }
-    }
-
-    listener_IngredientsCheckBox();
-}
-
-function generateHTML_Ingredients() {
-    let spiceTxtFile = './information/ingredient/spices.txt'
-    let vegTxtFile = './information/ingredient/vegetables.txt'
-
+async function generateHTML_Ingredients() {
     let spiceCheckBoxContainerID = document.getElementById("spices_checkBoxes");
     let vegCheckBoxContainerID = document.getElementById("vegetables_checkBoxes");
 
-    fetch(spiceTxtFile)
-        .then(response => response.text())
-        .then(text => generateCheckBox(text, spiceCheckBoxContainerID, "Spice"))
+    for (let i = 0; i < ingredientsList.length; i++) {
+        if (ingredientsList[i].idIngr !== null) {
 
-    fetch(vegTxtFile)
-        .then(response => response.text())
-        .then(text => generateCheckBox(text, vegCheckBoxContainerID, "Veg"))
+            if (ingredientsToIgnoreForCheckbox.includes(ingredientsList[i].nameIngr.toLowerCase())) {
+                continue;
+            }
 
-    // ingredients available at all times
-    ingredientsList.push(new ingredients(null, "Water", false, false));
+            let element = null;
+            if (ingredientsList[i].isSpice) {
+                element = spiceCheckBoxContainerID;
+            } else if (ingredientsList[i].isVegetable) {
+                element = vegCheckBoxContainerID;
+            }
+
+            // add html code for checkbox
+            await addHTMLLinesToCodeScreen(element,
+                [
+                    '<label class="checkbox" id="checkbox_btn_' + ingredientsList[i].idIngr + '"> ' +
+                    '<input type="checkbox" id="checkbox_name_' + ingredientsList[i].idIngr + '" checked> ' +
+                    ingredientsList[i].nameIngr + ' </label>'
+                ]);
+        }
+    }
+    listener_IngredientsCheckBox(); // listener for the checkbox
 }

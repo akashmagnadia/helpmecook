@@ -35,17 +35,37 @@ async function getTileDesc(path) {
     return { title, desc };
 }
 
-async function getIngredientsList(path) {
+async function getRecipeIngredientsList(path) {
     let json_ingr = await getJson(path);
-    let ingredientsList = [];
+    let recipeIngredientsList = [];
     let ingredientsFullNameList = [];
 
     for (let i = 0; i < json_ingr.length; i++) {
-        ingredientsList.push(json_ingr[i].item)
+        recipeIngredientsList.push(json_ingr[i].item)
+
+        if (!ingredientExist(json_ingr[i].item)) {
+
+            let isSpice, isVeg = false;
+            if (json_ingr[i].type.toLowerCase() === "spice") {
+                isSpice = true;
+            } else if (json_ingr[i].type.toLowerCase() === "other") {
+                isSpice = true;
+            } else if (json_ingr[i].type.toLowerCase() === "veg") {
+                isVeg = true;
+            }
+
+            ingredientsList.push(new ingredients(
+                json_ingr[i].item.replace(/ /g,''),
+                firstLetterUppercase(json_ingr[i].item),
+                isSpice,
+                isVeg
+            ));
+        }
+
         ingredientsFullNameList.push(json_ingr[i].quantity + " " + json_ingr[i].item)
     }
 
-    return [ingredientsList, ingredientsFullNameList];
+    return [recipeIngredientsList, ingredientsFullNameList];
 }
 
 async function getInstructionsList(path, ingredientsList) {
@@ -71,7 +91,7 @@ async function getInstructionsList(path, ingredientsList) {
     return linesToAdd;
 }
 
-async function generateHTML_SpicesCard() {
+async function generateHTML_SpicesCard(function1) {
     let json_recipes = await getJson('information/recipe/meta_data.json');
 
     for (let i = 0; i < json_recipes.recipes; i++) {
@@ -82,12 +102,10 @@ async function generateHTML_SpicesCard() {
         let title = (await titleDesc).title;
         let description = (await titleDesc).desc;
 
-        let [ingredientsList, ingredientsFullNameList] = await getIngredientsList('information/recipe/recipe_' + i + '/ingredients.json')
-        let instructionsToPush = await getInstructionsList('information/recipe/recipe_' + i + '/instructions.txt', ingredientsList)
+        let [recipeIngredientsList, ingredientsFullNameList] = await getRecipeIngredientsList('information/recipe/recipe_' + i + '/ingredients.json')
+        let instructionsToPush = await getInstructionsList('information/recipe/recipe_' + i + '/instructions.txt', recipeIngredientsList)
 
-        recipesList.push(new recipe(
-            'recipe_' + i,
-            title, description, ingredientsList, ingredientsFullNameList));
+        recipesList.push(new recipe('recipe_' + i, title, description, recipeIngredientsList, ingredientsFullNameList));
 
         let linesToAdd = [];
 
@@ -124,5 +142,7 @@ async function generateHTML_SpicesCard() {
         addHTMLLinesToCodeScreen(document.getElementById("recipe_list"), linesToAdd);
     }
 
-    build_accordion_listeners()
+    build_accordion_listeners();
+
+    function1(); // generateHTML_Ingredients
 }

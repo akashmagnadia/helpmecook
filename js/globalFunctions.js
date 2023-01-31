@@ -1,4 +1,6 @@
-function addHTMLLinesToCodeScreen(element, linesToAdd) {
+let ingredientsList = [];
+
+async function addHTMLLinesToCodeScreen(element, linesToAdd) {
     let str = '';
     for (let i = 0; i < linesToAdd.length; i++) {
         str += linesToAdd[i];
@@ -17,8 +19,8 @@ function updateRecipeFilter() {
         for (let j = 0; j < recipesList[i].ingredientsList.length; j++) {
             // check ingredients for the recipe with available ingredients
             for (let k = 0; k < ingredientsList.length; k++) {
-                // if one of the ingredient is missing
 
+                // if one of the ingredient is missing
                 if (recipesList[i].ingredientsList[j].toLowerCase() === ingredientsList[k].nameIngr.toLowerCase() &&
                     ingredientsList[k].isAvailable === false) {
 
@@ -40,12 +42,24 @@ function updateRecipeFilter() {
 }
 
 function firstLetterUppercase(sentence) {
-    const words = mySentence.split(" ");
+    const words = sentence.split(" ");
     let str = "";
 
     for (let i = 0; i < words.length; i++) {
-        str += words[i][0].toUpperCase() + words[i].substr(1) + " ";
+        str += words[i][0].toUpperCase() + words[i].substr(1);
+        if (i + 1 !== words.length) {
+            str += " ";
+        }
     }
 
     return str;
+}
+
+function ingredientExist(ingr) {
+    for (let i = 0; i < ingredientsList.length; i++) {
+        if (ingredientsList[i].nameIngr.toLowerCase() === ingr.toLowerCase()) {
+            return true;
+        }
+    }
+    return false;
 }
