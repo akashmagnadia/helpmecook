@@ -141,7 +141,7 @@ input[type="checkbox"]:checked::before {
     padding-right: 10px;
     border-radius: 10px;
     box-shadow: 3px 4px 6px 2px #c1bebe;
-    align-self: center;
+    /*align-self: center;*/
 }
 
 .accordion {
