@@ -15,8 +15,8 @@
         "type": "other"
     },
     {
-        "quantity": "½ teaspoon",
-        "item": "cummin",
+        "quantity": "1 small",
+        "item": "Onion",
         "type": "spice"
     },
     {
@@ -35,6 +35,11 @@
         "type": "veg"
     },
     {
+        "quantity": "",
+        "item": "Mint",
+        "type": "veg"
+    },
+    {
         "quantity": "¼ teaspoon",
         "item": "Turmeric",
         "type": "spice"
@@ -45,11 +50,6 @@
         "type": "spice"
     },
     {
-        "quantity": "",
-        "item": "Fresh coriander",
-        "type": "veg"
-    },
-    {
         "quantity": "1 teaspoon",
         "item": "Coriander",
         "type": "spice"
@@ -57,6 +57,11 @@
     {
         "quantity": "½ teaspoon",
         "item": "Salt",
+        "type": "spice"
+    },
+    {
+        "quantity": "¼ teaspoon",
+        "item": "Punjabi Masala",
         "type": "spice"
     },
     {

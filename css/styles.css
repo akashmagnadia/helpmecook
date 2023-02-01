@@ -168,7 +168,7 @@ input[type="checkbox"]:checked::before {
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .accordion_active, .accordion:hover {
-    background-color: #eee;
+    background-color: #eeeeeea6;
 }
 
 /* Style the accordion panel. Note: hidden by default */

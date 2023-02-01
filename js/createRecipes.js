@@ -78,9 +78,9 @@ async function getInstructionsList(path, ingredientsList) {
         if (arr[i].length !== 0) {
             let str = arr[i];
             for (let j = 0; j < ingredientsList.length; j++) {
-                const searchMask = ingredientsList[j];
+                const searchMask = " " + ingredientsList[j];
                 const regEx = new RegExp(searchMask, "ig");
-                const replaceMask = '<b> ' + searchMask + '</b>';
+                const replaceMask = ' <b> ' + searchMask + '</b>';
 
                 str = str.replace(regEx, replaceMask);
             }
