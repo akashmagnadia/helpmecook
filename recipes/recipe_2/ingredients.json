@@ -17,7 +17,7 @@
     {
         "quantity": "1 small",
         "item": "Onion",
-        "type": "spice"
+        "type": "veg"
     },
     {
         "quantity": "",
@@ -40,12 +40,12 @@
         "type": "veg"
     },
     {
-        "quantity": "¼ teaspoon",
+        "quantity": "1/4 teaspoon",
         "item": "Turmeric",
         "type": "spice"
     },
     {
-        "quantity": "½ teaspoon",
+        "quantity": "1/2 teaspoon",
         "item": "Red Chilli",
         "type": "spice"
     },
@@ -55,17 +55,17 @@
         "type": "spice"
     },
     {
-        "quantity": "½ teaspoon",
+        "quantity": "1/2 teaspoon",
         "item": "Salt",
         "type": "spice"
     },
     {
-        "quantity": "¼ teaspoon",
+        "quantity": "1/4 teaspoon",
         "item": "Punjabi Masala",
         "type": "spice"
     },
     {
-        "quantity": "½ teaspoon",
+        "quantity": "1/2 teaspoon",
         "item": "lemon juice",
         "type": "veg"
     }

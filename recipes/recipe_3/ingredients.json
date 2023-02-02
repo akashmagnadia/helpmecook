@@ -15,14 +15,24 @@
         "type": "other"
     },
     {
-        "quantity": "1/2 teaspoon",
-        "item": "cummin",
+        "quantity": "1/4 teaspoons",
+        "item": "Mustard Seeds",
+        "type": "spice"
+    },
+    {
+        "quantity": "1 pinch",
+        "item": "Asafoetida",
         "type": "spice"
     },
     {
         "quantity": "",
         "item": "Ginger",
         "type": "veg"
+    },
+    {
+        "quantity": "10",
+        "item": "Peanuts",
+        "type": "spice"
     },
     {
         "quantity": "",
@@ -40,18 +50,8 @@
         "type": "spice"
     },
     {
-        "quantity": "1/2 teaspoon",
+        "quantity": "1/4 teaspoon",
         "item": "Red Chilli",
-        "type": "spice"
-    },
-    {
-        "quantity": "",
-        "item": "Fresh coriander",
-        "type": "veg"
-    },
-    {
-        "quantity": "1 teaspoon",
-        "item": "Coriander",
         "type": "spice"
     },
     {
@@ -60,8 +60,23 @@
         "type": "spice"
     },
     {
+        "quantity": "1/4 teaspoon",
+        "item": "Sambhar Masala",
+        "type": "spice"
+    },
+    {
         "quantity": "1/2 teaspoon",
         "item": "lemon juice",
+        "type": "veg"
+    },
+    {
+        "quantity": "4 teaspoon",
+        "item": "Sugar",
+        "type": "spice"
+    },
+    {
+        "quantity": "",
+        "item": "Fresh coriander",
         "type": "veg"
     }
 ]
