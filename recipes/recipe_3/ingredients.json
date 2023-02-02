@@ -25,24 +25,9 @@
         "type": "spice"
     },
     {
-        "quantity": "",
-        "item": "Ginger",
-        "type": "veg"
-    },
-    {
         "quantity": "10",
         "item": "Peanuts",
         "type": "spice"
-    },
-    {
-        "quantity": "",
-        "item": "Garlic",
-        "type": "veg"
-    },
-    {
-        "quantity": "",
-        "item": "Jalapenos",
-        "type": "veg"
     },
     {
         "quantity": "1/4 teaspoon",
@@ -77,6 +62,11 @@
     {
         "quantity": "",
         "item": "Fresh coriander",
+        "type": "veg"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "Chili Paste",
         "type": "veg"
     }
 ]

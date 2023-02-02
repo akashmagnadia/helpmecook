@@ -10,12 +10,7 @@
         "type": "other"
     },
     {
-        "quantity": "1 packet Fresh",
-        "item": "Okra",
-        "type": "veg"
-    },
-    {
-        "quantity": "2 medium-sized",
+        "quantity": "6 medium-sized",
         "item": "Potato",
         "type": "veg"
     },
@@ -46,7 +41,22 @@
     },
     {
         "quantity": "1/2 teaspoon",
+        "item": "Chilli paste",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "cummin",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/2 teaspoon",
         "item": "Chili Paste",
+        "type": "spice"
+    },
+    {
+        "quantity": "",
+        "item": "Fresh coriander",
         "type": "veg"
     }
 ]

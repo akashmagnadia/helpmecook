@@ -21,21 +21,6 @@
     },
     {
         "quantity": "",
-        "item": "Ginger",
-        "type": "veg"
-    },
-    {
-        "quantity": "",
-        "item": "Garlic",
-        "type": "veg"
-    },
-    {
-        "quantity": "",
-        "item": "Jalapenos",
-        "type": "veg"
-    },
-    {
-        "quantity": "",
         "item": "Mint",
         "type": "veg"
     },
@@ -63,6 +48,11 @@
         "quantity": "1/4 teaspoon",
         "item": "Punjabi Masala",
         "type": "spice"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "Chili Paste",
+        "type": "veg"
     },
     {
         "quantity": "1/2 teaspoon",

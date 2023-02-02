@@ -20,21 +20,6 @@
         "type": "spice"
     },
     {
-        "quantity": "",
-        "item": "Ginger",
-        "type": "veg"
-    },
-    {
-        "quantity": "",
-        "item": "Garlic",
-        "type": "veg"
-    },
-    {
-        "quantity": "",
-        "item": "Jalapenos",
-        "type": "veg"
-    },
-    {
         "quantity": "1/4 teaspoon",
         "item": "Turmeric",
         "type": "spice"
@@ -58,6 +43,11 @@
         "quantity": "1/2 teaspoon",
         "item": "Salt",
         "type": "spice"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "Chili Paste",
+        "type": "veg"
     },
     {
         "quantity": "1/2 teaspoon",
