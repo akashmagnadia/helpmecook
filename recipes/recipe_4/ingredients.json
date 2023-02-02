@@ -1,0 +1,52 @@
+[
+    {
+        "quantity": "Large flat",
+        "item": "Pan",
+        "type": "other"
+    },
+    {
+        "quantity": "5 teaspoons",
+        "item": "Oil",
+        "type": "other"
+    },
+    {
+        "quantity": "1 packet Fresh",
+        "item": "Okra",
+        "type": "veg"
+    },
+    {
+        "quantity": "2 medium-sized",
+        "item": "Potato",
+        "type": "veg"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "lemon juice",
+        "type": "veg"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Turmeric",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Salt",
+        "type": "spice"
+    },
+    {
+        "quantity": "1 teaspoon",
+        "item": "Coriander",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Red Chilli",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "Chilli paste",
+        "type": "spice"
+    }
+]
