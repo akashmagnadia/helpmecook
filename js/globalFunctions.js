@@ -120,6 +120,12 @@ document.addEventListener("DOMContentLoaded", function() {
         function() {
             showRecipeSearchBar();
         }, 3000);
+
+    // TODO: Testing
+    setTimeout(
+        function() {
+            searchRecipeElement.blur();
+        }, 5000);
 });
 
 searchRecipeElement.addEventListener('keyup', (keyboardEvent) => {
@@ -127,4 +133,7 @@ searchRecipeElement.addEventListener('keyup', (keyboardEvent) => {
     if (key === 'Enter' || key === 13) {
         searchRecipeElement.blur();
     }
+
+    // TODO: Testing
+    alert("Hide keyboard");
 });
