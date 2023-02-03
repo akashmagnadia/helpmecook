@@ -16,7 +16,7 @@ function hideRecipe(element) {
 }
 
 function showRecipe(element) {
-    element.style.maxHeight = "1500px";
+    element.style.maxHeight = "2000px";
     element.style.boxShadow = "3px 4px 6px 2px #979797";
     element.style.opacity = "1";
     element.style.marginBottom = "15px"
@@ -82,3 +82,27 @@ function ingredientExist(ingr) {
     }
     return false;
 }
+
+function test() {
+    let searchRecipe = document.getElementById("recipe_search");
+    console.log(searchRecipe.value);
+}
+
+function showRecipeSearchBar() {
+    let searchRecipe = document.getElementById("recipe_search");
+    searchRecipe.style.maxHeight = "100px";
+    searchRecipe.style.padding = "7px";
+    searchRecipe.style.boxShadow = "none";
+    searchRecipe.style.marginBottom = "15px";
+    searchRecipe.style.marginLeft = "15px";
+    searchRecipe.style.marginRight = "15px";
+    searchRecipe.style.marginRight = "15px";
+    searchRecipe.style.boxShadow = "3px 4px 6px 2px #c1bebe";
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(
+        function() {
+            showRecipeSearchBar();
+        }, 3000);
+});
