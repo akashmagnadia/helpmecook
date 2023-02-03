@@ -8,13 +8,25 @@ async function addHTMLLinesToCodeScreen(element, linesToAdd) {
     element.innerHTML += str;
 }
 
+function hideRecipe(element) {
+    element.style.maxHeight = "0px";
+    element.style.boxShadow = "unset";
+    element.style.opacity = "0";
+    element.style.marginBottom = "0px"
+}
+
+function showRecipe(element) {
+    element.style.maxHeight = "1500px";
+    element.style.boxShadow = "3px 4px 6px 2px #979797";
+    element.style.opacity = "1";
+    element.style.marginBottom = "15px"
+}
+
 function updateRecipeFilter() {
     for (let i = 0; i < recipesList.length; i++) {
 
+        let makingVisible = true;
         let recipeContainer = document.getElementById(recipesList[i].recipeID);
-        recipeContainer.style.display = "unset";
-        // make the recipes visible from the start, then remove if after checking
-
 
         for (let j = 0; j < recipesList[i].ingredientsList.length; j++) {
             // check ingredients for the recipes with available ingredients
@@ -25,11 +37,13 @@ function updateRecipeFilter() {
                     ingredientsList[k].isAvailable === false) {
 
                     // make the recipes disappear
-                    recipeContainer.style.display = "none";
+                    hideRecipe(recipeContainer);
+
+                    makingVisible = false;
 
                     // no need to check other ingredients if one is already missing
                     j = recipesList[i].ingredientsList.length;
-                    break; // break out of loop for index k and then it will also exit the loop for index j
+                    break; // break out of loop for index k, and then it will also exit the loop for index j
                 } else {
                     // check other ingredients from checkbox
                 }
@@ -38,6 +52,11 @@ function updateRecipeFilter() {
             // move to the next ingredient from the recipes
         }
         // move to the next recipes in the ingredient listing
+
+        if (makingVisible) {
+            // make the recipes visible from the start, then remove if after checking
+            showRecipe(recipeContainer);
+        }
     }
 }
 

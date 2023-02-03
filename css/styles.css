@@ -51,7 +51,8 @@ h1, h2, h3 {
     margin-right: 15px;
     margin-bottom: 15px;
     border-radius: 30px;
-    box-shadow: 3px 4px 6px 2px #979797;
+    box-shadow: 3px 4px 6px 2px #979797; /*also set in javascript*/
+    transition: max-height 0.4s ease-in, box-shadow 0.4s ease-in, opacity 0.4s ease-in, margin-bottom 0.6s ease-in;
 }
 
 .floatingImg {
