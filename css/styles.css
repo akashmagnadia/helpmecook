@@ -220,6 +220,7 @@ input[type="checkbox"]:checked::before {
 }
 
 #recipe_search {
+    width: calc(100% - 30px);
     border: none;
     border-radius: 15px;
     text-align: center;

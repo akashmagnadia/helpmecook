@@ -113,6 +113,11 @@ function showRecipeSearchBar() {
     searchRecipe.style.marginRight = "15px";
     searchRecipe.style.marginRight = "15px";
     searchRecipe.style.boxShadow = "3px 4px 6px 2px #c1bebe";
+
+    document.getElementById("recipe_search_form")
+        .addEventListener('change', function () {
+        document.getElementById("recipe_search").blur()
+    });
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -120,26 +125,4 @@ document.addEventListener("DOMContentLoaded", function() {
         function() {
             showRecipeSearchBar();
         }, 3000);
-});
-
-window.addEventListener('keyup', (keyboardEvent) => {
-    if (keyboardEvent.code === 'Enter') {
-        document.getElementById("recipe_search").blur();
-        alert("Enter");
-    }
-
-    if (keyboardEvent.code === 'Search') {
-        document.getElementById("recipe_search").blur();
-        alert("Search");
-    }
-
-    if (keyboardEvent.code === 'Go') {
-        document.getElementById("recipe_search").blur();
-        alert("Go");
-    }
-
-    if (keyboardEvent.code === 'Done') {
-        document.getElementById("recipe_search").blur();
-        alert("Done");
-    }
 });

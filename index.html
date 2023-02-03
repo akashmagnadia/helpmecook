@@ -38,9 +38,9 @@
 
         <div class="container d-col d-wrap" id="recipe_list">
             <h2> Recipes </h2>
-            <form onsubmit="alert('submitted')">
+            <form onsubmit="return false" id="recipe_search_form">
                 <label for="recipe_search">
-                    <input type="search" onkeyup="updateRecipeFilter()" placeholder="Search Recipes: Okra Potato" id="recipe_search">
+                    <input type="text" onkeyup="updateRecipeFilter()" placeholder="Search Recipes: Okra Potato" id="recipe_search">
                 </label>
             </form>
         </div>
