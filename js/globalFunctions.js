@@ -123,6 +123,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 window.addEventListener('keyup', (keyboardEvent) => {
+    alert(keyboardEvent.code);
     if (keyboardEvent.code === 'Enter') {
         document.getElementById("recipe_search").blur();
     }
