@@ -120,20 +120,25 @@ document.addEventListener("DOMContentLoaded", function() {
         function() {
             showRecipeSearchBar();
         }, 3000);
-
-    // TODO: Testing
-    setTimeout(
-        function() {
-            document.getElementById("recipe_search").blur();
-        }, 5000);
 });
 
-document.getElementById("recipe_search").addEventListener('keyup', (keyboardEvent) => {
-    const key = keyboardEvent.code || keyboardEvent.keyCode;
-    if (key === 'Enter' || key === 13) {
+// TODO: Testing
+$("#recipe_search").keyup(function(event) {
+    alert("here");
+    console.log("here");
+    if (event.keyCode === 13) {
+        alert("here2");
+        console.log("here2");
         document.getElementById("recipe_search").blur();
     }
-
-    // TODO: Testing
-    alert("Hide keyboard");
 });
+
+// document.getElementById("recipe_search").addEventListener('keyup', (keyboardEvent) => {
+//     const key = keyboardEvent.code || keyboardEvent.keyCode;
+//     if (key === 'Enter' || key === 13) {
+//         document.getElementById("recipe_search").blur();
+//     }
+//
+//     // TODO: Testing
+//     alert("Hide keyboard");
+// });
