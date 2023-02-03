@@ -22,10 +22,25 @@ function showRecipe(element) {
     element.style.marginBottom = "15px"
 }
 
+function searchBarInput(recipesItem) {
+    let searchRecipeInput = document.getElementById("recipe_search").value;
+
+    if (searchRecipeInput !== "") {
+        const searchWords = searchRecipeInput.split(" ");
+
+        for (let i = 0; i < searchWords.length; i++) {
+            if (!recipesItem.description.toLowerCase().includes(searchWords[i].toLowerCase())) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 function updateRecipeFilter() {
     for (let i = 0; i < recipesList.length; i++) {
 
-        let makingVisible = true;
+        let allIngredientsPresent = true;
         let recipeContainer = document.getElementById(recipesList[i].recipeID);
 
         for (let j = 0; j < recipesList[i].ingredientsList.length; j++) {
@@ -36,10 +51,7 @@ function updateRecipeFilter() {
                 if (recipesList[i].ingredientsList[j].toLowerCase() === ingredientsList[k].nameIngr.toLowerCase() &&
                     ingredientsList[k].isAvailable === false) {
 
-                    // make the recipes disappear
-                    hideRecipe(recipeContainer);
-
-                    makingVisible = false;
+                    allIngredientsPresent = false;
 
                     // no need to check other ingredients if one is already missing
                     j = recipesList[i].ingredientsList.length;
@@ -53,9 +65,16 @@ function updateRecipeFilter() {
         }
         // move to the next recipes in the ingredient listing
 
-        if (makingVisible) {
-            // make the recipes visible from the start, then remove if after checking
-            showRecipe(recipeContainer);
+        if (allIngredientsPresent) {
+            if (searchBarInput(recipesList[i])) {
+                showRecipe(recipeContainer);
+            } else {
+                // make the recipes disappear
+                hideRecipe(recipeContainer);
+            }
+        } else {
+            // make the recipes disappear
+            hideRecipe(recipeContainer);
         }
     }
 }
@@ -81,11 +100,6 @@ function ingredientExist(ingr) {
         }
     }
     return false;
-}
-
-function test() {
-    let searchRecipe = document.getElementById("recipe_search");
-    console.log(searchRecipe.value);
 }
 
 function showRecipeSearchBar() {
