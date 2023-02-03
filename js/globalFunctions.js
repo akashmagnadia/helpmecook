@@ -29,7 +29,8 @@ function searchBarInput(recipesItem) {
         const searchWords = searchRecipeInput.split(" ");
 
         for (let i = 0; i < searchWords.length; i++) {
-            if (!recipesItem.description.toLowerCase().includes(searchWords[i].toLowerCase())) {
+            if (!recipesItem.description.toLowerCase().includes(searchWords[i].toLowerCase()) &&
+                !recipesItem.title.toLowerCase().includes(searchWords[i].toLowerCase())) {
                 return false;
             }
         }
