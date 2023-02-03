@@ -123,8 +123,23 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 window.addEventListener('keyup', (keyboardEvent) => {
-    document.getElementById("recipe_search").value = keyboardEvent.code;
     if (keyboardEvent.code === 'Enter') {
         document.getElementById("recipe_search").blur();
+        alert("Enter");
+    }
+
+    if (keyboardEvent.code === 'Search') {
+        document.getElementById("recipe_search").blur();
+        alert("Search");
+    }
+
+    if (keyboardEvent.code === 'Go') {
+        document.getElementById("recipe_search").blur();
+        alert("Go");
+    }
+
+    if (keyboardEvent.code === 'Done') {
+        document.getElementById("recipe_search").blur();
+        alert("Done");
     }
 });
