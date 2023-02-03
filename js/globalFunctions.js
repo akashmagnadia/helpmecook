@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // TODO: Testing
     setTimeout(
         function() {
-            searchRecipeElement.blur();
+            document.getElementById("recipe_search").blur();
         }, 5000);
 });
 
