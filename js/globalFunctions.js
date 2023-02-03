@@ -1,5 +1,4 @@
 let ingredientsList = [];
-let searchRecipeElement = document.getElementById("recipe_search");
 
 async function addHTMLLinesToCodeScreen(element, linesToAdd) {
     let str = '';
@@ -24,9 +23,10 @@ function showRecipe(element) {
 }
 
 function searchBarInput(recipesItem) {
+    let searchRecipeInput = document.getElementById("recipe_search").value;
 
-    if (searchRecipeElement.value !== "") {
-        const searchWords = searchRecipeElement.value.split(" ");
+    if (searchRecipeInput !== "") {
+        const searchWords = searchRecipeInput.split(" ");
 
         for (let i = 0; i < searchWords.length; i++) {
             if (!recipesItem.description.toLowerCase().includes(searchWords[i].toLowerCase()) &&
@@ -128,10 +128,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 5000);
 });
 
-searchRecipeElement.addEventListener('keyup', (keyboardEvent) => {
+document.getElementById("recipe_search").addEventListener('keyup', (keyboardEvent) => {
     const key = keyboardEvent.code || keyboardEvent.keyCode;
     if (key === 'Enter' || key === 13) {
-        searchRecipeElement.blur();
+        document.getElementById("recipe_search").blur();
     }
 
     // TODO: Testing
