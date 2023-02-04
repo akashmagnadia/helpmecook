@@ -1,0 +1,37 @@
+[
+    {
+        "quantity": "",
+        "item": "Instant Pot",
+        "type": "other"
+    },
+    {
+        "quantity": "4 cups",
+        "item": "Water",
+        "type": "other"
+    },
+    {
+        "quantity": "1 cup",
+        "item": "Pinto Beans",
+        "type": "veg"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "Salt",
+        "type": "spice"
+    },
+    {
+        "quantity": "3 teaspoons",
+        "item": "Taco Seasoning",
+        "type": "spice"
+    },
+    {
+        "quantity": "1 small",
+        "item": "Onion",
+        "type": "veg"
+    },
+    {
+        "quantity": "1/2",
+        "item": "Jalapeno",
+        "type": "veg"
+    }
+]
