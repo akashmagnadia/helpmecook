@@ -1,0 +1,72 @@
+[
+    {
+        "quantity": "Large",
+        "item": "Pan",
+        "type": "other"
+    },
+    {
+        "quantity": "5 teaspoons",
+        "item": "Oil",
+        "type": "other"
+    },
+    {
+        "quantity": "1 small or 1/2 large",
+        "item": "Cabbage",
+        "type": "veg"
+    },
+    {
+        "quantity": "1 small or 1/2 large",
+        "item": "Cauliflower",
+        "type": "veg"
+    },
+    {
+        "quantity": "2 medium",
+        "item": "Potato",
+        "type": "veg"
+    },
+    {
+        "quantity": "1 medium",
+        "item": "Tomato",
+        "type": "veg"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "Mustard Seeds",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Turmeric",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "Salt",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "Chilli Paste",
+        "type": "spice"
+    },
+    {
+        "quantity": "1 teaspoon",
+        "item": "Coriander",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Red Chilli",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Pav Bhaji",
+        "type": "spice"
+    },
+    {
+        "quantity": "",
+        "item": "Fresh coriander",
+        "type": "veg"
+    }
+]
