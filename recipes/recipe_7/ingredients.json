@@ -1,0 +1,67 @@
+[
+    {
+        "quantity": "Small",
+        "item": "Pan",
+        "type": "other"
+    },
+    {
+        "quantity": "3 teaspoons",
+        "item": "Oil",
+        "type": "other"
+    },
+    {
+        "quantity": "1/2 cup",
+        "item": "Water",
+        "type": "other"
+    },
+    {
+        "quantity": "14 oz Canned or Fresh Chopped",
+        "item": "Diced Tomatoes",
+        "type": "veg"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Salt",
+        "type": "spice"
+    },
+    {
+        "quantity": "1 teaspoon",
+        "item": "Sugar",
+        "type": "spice"
+    },
+    {
+        "quantity": "2 teaspoons",
+        "item": "All-Purpose Flour",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Red Chilli",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Black Pepper",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Garlic Powder",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Onion Powder",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Cumin",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Oregano",
+        "type": "spice"
+    }
+]
