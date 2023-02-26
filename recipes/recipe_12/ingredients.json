@@ -1,0 +1,37 @@
+[
+    {
+        "quantity": "",
+        "item": "Instant Pot",
+        "type": "other"
+    },
+    {
+        "quantity": "1 Instant Pot",
+        "item": "Stackable Container",
+        "type": "other"
+    },
+    {
+        "quantity": "1/2 cup",
+        "item": "Basmati Rice",
+        "type": "spice"
+    },
+    {
+        "quantity": "1 and 1/3 cups",
+        "item": "Water",
+        "type": "other"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "cumin",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Salt",
+        "type": "spice"
+    },
+    {
+        "quantity": "2 teaspoons",
+        "item": "Ghee",
+        "type": "other"
+    }
+]

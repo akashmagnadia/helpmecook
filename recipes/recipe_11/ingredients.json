@@ -1,0 +1,102 @@
+[
+    {
+        "quantity": "",
+        "item": "Instant Pot",
+        "type": "other"
+    },
+    {
+        "quantity": "4 teaspoons",
+        "item": "Oil",
+        "type": "other"
+    },
+    {
+        "quantity": "3 teaspoons",
+        "item": "Ghee",
+        "type": "other"
+    },
+    {
+        "quantity": "1 medium",
+        "item": "Onion",
+        "type": "veg"
+    },
+    {
+        "quantity": "1/4 cup",
+        "item": "Chana Dal",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 cup",
+        "item": "Moong Dal",
+        "type": "spice"
+    },
+    {
+        "quantity": "1 big",
+        "item": "Tomato",
+        "type": "veg"
+    },
+    {
+        "quantity": "1 pinch",
+        "item": "Secret Masala",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoons",
+        "item": "Mustard Seeds",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Cumin",
+        "type": "spice"
+    },
+    {
+        "quantity": "1 pinch",
+        "item": "Hing",
+        "type": "spice"
+    },
+    {
+        "quantity": "1 teaspoon",
+        "item": "Chilli Paste",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Turmeric",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "Red Chilli",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Cumin Powder",
+        "type": "spice"
+    },
+    {
+        "quantity": "",
+        "item": "Fresh coriander",
+        "type": "veg"
+    },
+    {
+        "quantity": "1 teaspoon",
+        "item": "Coriander",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "Salt",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Garam Masala",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Kasturi Methi",
+        "type": "spice"
+    }
+]

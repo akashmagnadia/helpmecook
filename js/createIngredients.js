@@ -1,6 +1,6 @@
 // input them in lowercase
 // this assumes that you always have the following items
-let ingredientsToIgnoreForCheckbox = ["chili paste", "pan", "chilli paste", "mixer", "prepared dal", "water", "instant pot", "stackable container", "pot", "oil"];
+let ingredientsToIgnoreForCheckbox = ["coconut sesame peanut mix", "chili paste", "pan", "chilli paste", "mixer", "prepared dal", "water", "instant pot", "stackable container", "pot", "oil"];
 
 function listener_IngredientsCheckBox() {
     for (let i = 0; i < ingredientsList.length; i++) {
