@@ -1,0 +1,57 @@
+[
+    {
+        "quantity": "Large flat",
+        "item": "Pan",
+        "type": "other"
+    },
+    {
+        "quantity": "1 pound",
+        "item": "Tofu",
+        "type": "veg"
+    },
+    {
+        "quantity": "2 tablespoon",
+        "item": "Oil",
+        "type": "other"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Red Chilli",
+        "type": "spice"
+    },
+    {
+        "quantity": "1 teaspoon",
+        "item": "Salt",
+        "type": "spice"
+    },
+    {
+        "quantity": "1 medium",
+        "item": "Onion",
+        "type": "veg"
+    },
+    {
+        "quantity": "1 medium",
+        "item": "Pepper",
+        "type": "veg"
+    },
+    {
+        "quantity": "1 teaspoon",
+        "item": "Chilli Paste",
+        "type": "spice"
+    },
+    {
+        "quantity": "3 spoon",
+        "item": "soy sauce",
+        "type": "spice"
+    },
+    {
+        "quantity": "3.5 spoon",
+        "item": "red chilli sauce",
+        "type": "spice"
+    },
+    {
+        "quantity": "2 spoon",
+        "item": "ketchup",
+        "type": "spice"
+    }
+]
