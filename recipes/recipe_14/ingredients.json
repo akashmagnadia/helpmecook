@@ -1,0 +1,57 @@
+[
+    {
+        "quantity": "Large flat",
+        "item": "Pan",
+        "type": "other"
+    },
+    {
+        "quantity": "",
+        "item": "Instant Pot",
+        "type": "other"
+    },
+    {
+        "quantity": "12",
+        "item": "Potatoes",
+        "type": "veg"
+    },
+    {
+        "quantity": "1",
+        "item": "lemon",
+        "type": "veg"
+    },
+    {
+        "quantity": "3 teaspoon",
+        "item": "Oil",
+        "type": "other"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "Sesame seed",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Turmeric",
+        "type": "spice"
+    },
+    {
+        "quantity": "1 teaspoon",
+        "item": "Red Chilli",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "Salt",
+        "type": "spice"
+    },
+    {
+        "quantity": "1.5 teaspoon",
+        "item": "Coriander",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Black Salt",
+        "type": "spice"
+    }
+]
