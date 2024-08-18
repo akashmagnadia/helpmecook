@@ -1,5 +1,10 @@
 [
     {
+        "quantity": "1 block",
+        "item": "Paneer",
+        "type": "other"
+    },
+    {
         "quantity": "large",
         "item": "Pan",
         "type": "other"
@@ -48,5 +53,10 @@
         "quantity": "1/2 teaspoon",
         "item": "Salt",
         "type": "spice"
+    },
+    {
+        "quantity": "4",
+        "item": "egg",
+        "type": "other"
     }
 ]

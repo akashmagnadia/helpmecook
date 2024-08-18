@@ -94,7 +94,7 @@ async function getInstructionsList(path, ingredientsList) {
 async function generateHTML_SpicesCard(function1) {
     let json_recipes = await getJson('recipes/meta_data.json');
 
-    for (let i = 0; i < json_recipes.recipes; i++) {
+    for (let i = json_recipes.recipes - 1; i > 0; i--) {
         let imgPath = 'recipes/recipe_' + i + '/dish_img.jpg';
         let titleDescPath = 'recipes/recipe_' + i + '/title_desc.txt';
 
