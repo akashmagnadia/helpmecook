@@ -1,0 +1,52 @@
+[
+    {
+        "quantity": "large",
+        "item": "Pan",
+        "type": "other"
+    },
+    {
+        "quantity": "1 medium",
+        "item": "Onion",
+        "type": "veg"
+    },
+    {
+        "quantity": "1/2 medium",
+        "item": "Pepper",
+        "type": "veg"
+    },
+    {
+        "quantity": "3 medium",
+        "item": "Tomato",
+        "type": "veg"
+    },
+    {
+        "quantity": "1 teaspoon",
+        "item": "Chilli Paste",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Turmeric",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "Red Chilli",
+        "type": "spice"
+    },
+    {
+        "quantity": "1 teaspoon",
+        "item": "Coriander",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Garam Masala",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "Salt",
+        "type": "spice"
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "quantity": "Medium Soup",
+        "item": "Pan",
+        "type": "other"
+    },
+    {
+        "quantity": "5 medium",
+        "item": "Ginger",
+        "type": "veg"
+    },
+    {
+        "quantity": "1 cup",
+        "item": "lemon",
+        "type": "veg"
+    },
+    {
+        "quantity": "2 cup",
+        "item": "Sugar",
+        "type": "spice"
+    },
+    {
+        "quantity": "1 teaspoon",
+        "item": "Black Salt",
+        "type": "spice"
+    },
+    {
+        "quantity": "1 teaspoon",
+        "item": "Salt",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "Black Pepper",
+        "type": "spice"
+    },
+    {
+        "quantity": "4 teaspoon",
+        "item": "Cumin powder",
+        "type": "spice"
+    }
+]
