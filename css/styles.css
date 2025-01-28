@@ -57,7 +57,7 @@ h1, h2, h3 {
 }
 
 .floatingImg {
-    max-width: 20%;
+    max-width: 15%;
     margin: 10px 20px;
     border-radius: 20%;
     box-shadow: 3px 4px 14px 2px #979797;
