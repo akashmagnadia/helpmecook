@@ -1,0 +1,52 @@
+[
+    {
+        "quantity": "medium",
+        "item": "Pan",
+        "type": "other"
+    },
+    {
+        "quantity": "3 medium",
+        "item": "Tomato",
+        "type": "veg"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "Chilli Paste",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Turmeric",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "Red Chilli",
+        "type": "spice"
+    },
+    {
+        "quantity": "1 teaspoon",
+        "item": "Coriander",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "Salt",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/2 teaspoon",
+        "item": "Cumin Powder",
+        "type": "spice"
+    },
+    {
+        "quantity": "1 small cup",
+        "item": "Jaggery",
+        "type": "other"
+    },
+    {
+        "quantity": "small or medium",
+        "item": "Sev",
+        "type": "other"
+    }
+]

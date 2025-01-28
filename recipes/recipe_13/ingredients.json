@@ -5,7 +5,7 @@
         "type": "other"
     },
     {
-        "quantity": "1 pound",
+        "quantity": "1.2 pound or 19.5 Oz",
         "item": "Tofu",
         "type": "veg"
     },
@@ -15,14 +15,9 @@
         "type": "other"
     },
     {
-        "quantity": "1/4 teaspoon",
-        "item": "Red Chilli",
-        "type": "spice"
-    },
-    {
-        "quantity": "1 teaspoon",
-        "item": "Salt",
-        "type": "spice"
+        "quantity": "Handful",
+        "item": "Spring Onion",
+        "type": "veg"
     },
     {
         "quantity": "1 medium",
@@ -36,11 +31,21 @@
     },
     {
         "quantity": "1 teaspoon",
+        "item": "Red Chilli",
+        "type": "spice"
+    },
+    {
+        "quantity": "1 teaspoon",
+        "item": "Salt",
+        "type": "spice"
+    },
+    {
+        "quantity": "1.5 teaspoon",
         "item": "Chilli Paste",
         "type": "spice"
     },
     {
-        "quantity": "3 spoon",
+        "quantity": "2 spoon",
         "item": "soy sauce",
         "type": "spice"
     },
@@ -50,8 +55,18 @@
         "type": "spice"
     },
     {
-        "quantity": "2 spoon",
+        "quantity": "3 spoon",
         "item": "ketchup",
         "type": "spice"
+    },
+    {
+        "quantity": "2 teaspoon",
+        "item": "sugar",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/2",
+        "item": "lime",
+        "type": "other"
     }
 ]
