@@ -1,0 +1,67 @@
+[
+    {
+        "quantity": "large",
+        "item": "Pan",
+        "type": "other"
+    },
+    {
+        "quantity": "1/4 cup",
+        "item": "Butter",
+        "type": "other"
+    },
+    {
+        "quantity": "4 tablespoon",
+        "item": "Olive Oil",
+        "type": "other"
+    },
+    {
+        "quantity": "2 tablespoon",
+        "item": "Pesto",
+        "type": "Other"
+    },
+    {
+        "quantity": "1 small bottle",
+        "item": "Alfredo Sauce",
+        "type": "other"
+    },
+    {
+        "quantity": "4 cloves",
+        "item": "Garlic",
+        "type": "veg"
+    },
+    {
+        "quantity": "1",
+        "item": "Jalapeño",
+        "type": "veg"
+    },
+    {
+        "quantity": "1 medium",
+        "item": "Onion",
+        "type": "veg"
+    },
+    {
+        "quantity": "1 medium",
+        "item": "Bell pepper",
+        "type": "veg"
+    },
+    {
+        "quantity": "1 large",
+        "item": "Zucchini",
+        "type": "veg"
+    },
+    {
+        "quantity": "1 big",
+        "item": "Brocolli",
+        "type": "veg"
+    },
+    {
+        "quantity": "1.5 teaspoon",
+        "item": "Salt",
+        "type": "spice"
+    },
+    {
+        "quantity": "1/4 teaspoon",
+        "item": "Red Pepper Flakes",
+        "type": "spice"
+    }
+]
