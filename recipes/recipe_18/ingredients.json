@@ -25,6 +25,11 @@
         "type": "other"
     },
     {
+        "quantity": "1 small bottle",
+        "item": "Marinara Sauce",
+        "type": "other"
+    },
+    {
         "quantity": "4 cloves",
         "item": "Garlic",
         "type": "veg"
@@ -51,7 +56,7 @@
     },
     {
         "quantity": "1 big",
-        "item": "Brocolli",
+        "item": "Broccoli",
         "type": "veg"
     },
     {
