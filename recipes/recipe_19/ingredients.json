@@ -1,0 +1,37 @@
+[
+  {
+    "quantity": "",
+    "item": "Instant Pot",
+    "type": "other"
+  },
+  {
+    "quantity": "1/4 teaspoon",
+    "item": "Turmeric",
+    "type": "spice"
+  },
+  {
+    "quantity": "1 teaspoon",
+    "item": "Salt",
+    "type": "spice"
+  },
+  {
+    "quantity": "1/2 cup",
+    "item": "Toor Dal",
+    "type": "spice"
+  },
+  {
+    "quantity": "1 cup",
+    "item": "Jasmin Rice",
+    "type": "spice"
+  },
+  {
+    "quantity": "2 teaspoons",
+    "item": "Ghee",
+    "type": "other"
+  },
+  {
+    "quantity": "4 cups",
+    "item": "Water",
+    "type": "other"
+  }
+]
