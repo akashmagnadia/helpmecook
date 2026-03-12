@@ -57,11 +57,19 @@ h1, h2, h3 {
 }
 
 .floatingImg {
-    max-width: 15%;
-    margin: 10px 20px;
-    border-radius: 20%;
-    box-shadow: 3px 4px 14px 2px #979797;
+    width: clamp(90px, 15%, 150px);
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    margin: clamp(10px, 2vw, 20px);
+    border-radius: 15px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
     object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floatingImg:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 .linkBtn {
