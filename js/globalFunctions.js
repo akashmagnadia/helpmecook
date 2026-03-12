@@ -12,14 +12,16 @@ function hideRecipe(element) {
     element.style.maxHeight = "0px";
     element.style.boxShadow = "none";
     element.style.opacity = "0";
-    element.style.marginBottom = "0px"
+    element.style.margin = "0px";
+    element.style.borderWidth = "0px";
 }
 
 function showRecipe(element) {
     element.style.maxHeight = "2000px";
     element.style.boxShadow = "";
     element.style.opacity = "1";
-    element.style.marginBottom = "15px"
+    element.style.margin = "";
+    element.style.borderWidth = "";
 }
 
 function searchBarInput(recipesItem) {
