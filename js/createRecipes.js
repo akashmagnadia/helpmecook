@@ -108,7 +108,7 @@ async function generateHTML_SpicesCard(function1) {
         }
     }
 
-    // Process from newest to oldest (assuming higher index is newer/desired order)
+    // Process from newest to oldest (assuming the higher index is the newer / desired order)
     for (let idx = recipesToProcess.length - 1; idx >= 0; idx--) {
         let i = recipesToProcess[idx];
         let imgPath = 'recipes/recipe_' + i + '/dish_img.jpg';

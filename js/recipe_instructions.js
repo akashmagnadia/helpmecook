@@ -24,14 +24,44 @@ function openRecipeDialog(index) {
 
 function closeRecipeDialog() {
     const dialog = document.getElementById('recipe-dialog');
-    dialog.close();
+    if (dialog) {
+        dialog.close();
+    } else {
+        console.error("Recipe dialog element not found");
+    }
 }
 
-// Close on backdrop click
-document.addEventListener('click', (e) => {
+// Initializing event listeners on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
     const dialog = document.getElementById('recipe-dialog');
-    if (e.target === dialog) {
-        dialog.close();
+
+    // Explicit listeners for close buttons
+    const closeX = document.querySelector('.close-x');
+    const closeBtn = document.querySelector('.close-btn');
+
+    if (closeX) {
+        closeX.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            closeRecipeDialog();
+        });
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            closeRecipeDialog();
+        });
+    }
+
+    // Close on backdrop click
+    if (dialog) {
+        dialog.addEventListener('click', (e) => {
+            if (e.target === dialog) {
+                dialog.close();
+            }
+        });
     }
 });
 
