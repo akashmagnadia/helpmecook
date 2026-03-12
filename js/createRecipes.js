@@ -92,9 +92,25 @@ async function getInstructionsList(path, ingredientsList) {
 }
 
 async function generateHTML_SpicesCard(function1) {
-    let json_recipes = await getJson('recipes/meta_data.json');
+    let i = 0;
+    let recipesToProcess = [];
 
-    for (let i = json_recipes.recipes - 1; i > 0; i--) {
+    // Dynamically detect all available recipes
+    while (true) {
+        let titleDescPath = 'recipes/recipe_' + i + '/title_desc.txt';
+        try {
+            const response = await fetch(titleDescPath, { method: 'HEAD' });
+            if (!response.ok) break;
+            recipesToProcess.push(i);
+            i++;
+        } catch (e) {
+            break;
+        }
+    }
+
+    // Process from newest to oldest (assuming higher index is newer/desired order)
+    for (let idx = recipesToProcess.length - 1; idx >= 0; idx--) {
+        let i = recipesToProcess[idx];
         let imgPath = 'recipes/recipe_' + i + '/dish_img.jpg';
         let titleDescPath = 'recipes/recipe_' + i + '/title_desc.txt';
 
