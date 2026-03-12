@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Theme script loaded early to avoid flash of wrong theme -->
+    <!-- Theme script loaded early to avoid flash of the wrong theme -->
     <script src="js/theme.js"></script>
 </head>
 
@@ -31,37 +31,62 @@
 
     <div id="recipe_ingredient" class="container d-row d-wrap">
 
-                <div class="container d-col d-wrap" id="ingredients">
-                    <h2 style="margin-left: 15px;"> Ingredients </h2>
+        <div class="container d-col d-wrap" id="ingredients">
+            <h2 style="margin-left: 15px;"> Ingredients </h2>
 
-                        <details class="chip-dropdown" open>
-                            <summary class="chip-dropdown-summary">Spices</summary>
-                            <div class="chip-dropdown-body is-open">
-                                <div class="container d-row d-wrap" id="spices_checkBoxes"></div>
-                            </div>
-                        </details>
-
-                        <details class="chip-dropdown">
-                            <summary class="chip-dropdown-summary">Vegetables</summary>
-                            <div class="chip-dropdown-body">
-                                <div class="container d-row d-wrap" id="vegetables_checkBoxes"></div>
-                            </div>
-                        </details>
-
+                <details class="chip-dropdown">
+                    <summary class="chip-dropdown-summary">Spices</summary>
+                    <div class="chip-dropdown-body">
+                        <div class="container d-row d-wrap" id="spices_checkBoxes"></div>
                     </div>
+                </details>
 
-                </div>
+                <details class="chip-dropdown">
+                    <summary class="chip-dropdown-summary">Vegetables</summary>
+                    <div class="chip-dropdown-body">
+                        <div class="container d-row d-wrap" id="vegetables_checkBoxes"></div>
+                    </div>
+                </details>
+
+            </div>
+
+        </div>
 
         <div class="container d-col d-wrap" id="recipe_list">
             <h2> Recipes </h2>
             <form onsubmit="return false" id="recipe_search_form">
-                <input type="text" onkeyup="updateRecipeFilter()" placeholder="Search Recipes: Okra Potato" id="recipe_search" aria-label="Search Recipes">
+                <div class="search-wrapper">
+                    <i class="fa fa-search search-icon"></i>
+                    <input type="text" onkeyup="updateRecipeFilter()" placeholder="Search Recipes: Okra Potato" id="recipe_search" aria-label="Search Recipes">
+                </div>
             </form>
+            <div id="recipe_tiles_container" style="width: 100%;"></div>
         </div>
 
     </div>
 
 </div>
+
+<!-- Recipe Dialog -->
+<dialog id="recipe-dialog" class="recipe-dialog">
+    <div class="dialog-header">
+        <h2 id="dialog-title">Recipe Name</h2>
+        <button class="close-x" onclick="closeRecipeDialog()" aria-label="Close">&times;</button>
+    </div>
+    <div class="dialog-content">
+        <div id="dialog-ingredients">
+            <h3>Things you will need:</h3>
+            <ul id="dialog-ingredients-list"></ul>
+        </div>
+        <div id="dialog-instructions">
+            <h3>Instructions:</h3>
+            <ol id="dialog-instructions-list"></ol>
+        </div>
+    </div>
+    <div class="dialog-footer">
+        <button class="close-btn" onclick="closeRecipeDialog()">Close</button>
+    </div>
+</dialog>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="js/class/ingredients.js" type="text/javascript"></script>

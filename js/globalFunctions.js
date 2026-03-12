@@ -9,19 +9,11 @@ async function addHTMLLinesToCodeScreen(element, linesToAdd) {
 }
 
 function hideRecipe(element) {
-    element.style.maxHeight = "0px";
-    element.style.boxShadow = "none";
-    element.style.opacity = "0";
-    element.style.margin = "0px";
-    element.style.borderWidth = "0px";
+    element.style.display = "none";
 }
 
 function showRecipe(element) {
-    element.style.maxHeight = "2000px";
-    element.style.boxShadow = "";
-    element.style.opacity = "1";
-    element.style.margin = "";
-    element.style.borderWidth = "";
+    element.style.display = "flex";
 }
 
 function searchBarInput(recipesItem) {
@@ -41,44 +33,34 @@ function searchBarInput(recipesItem) {
 }
 
 function updateRecipeFilter() {
-    for (let i = 0; i < recipesList.length; i++) {
+    const doFilter = () => {
+        for (let i = 0; i < recipesList.length; i++) {
+            let allIngredientsPresent = true;
+            let recipeContainer = document.getElementById(recipesList[i].recipeID);
 
-        let allIngredientsPresent = true;
-        let recipeContainer = document.getElementById(recipesList[i].recipeID);
-
-        for (let j = 0; j < recipesList[i].ingredientsList.length; j++) {
-            // check ingredients for the recipes with available ingredients
-            for (let k = 0; k < ingredientsList.length; k++) {
-
-                // if one of the ingredient is missing
-                if (recipesList[i].ingredientsList[j].toLowerCase() === ingredientsList[k].nameIngr.toLowerCase() &&
-                    ingredientsList[k].isAvailable === false) {
-
-                    allIngredientsPresent = false;
-
-                    // no need to check other ingredients if one is already missing
-                    j = recipesList[i].ingredientsList.length;
-                    break; // break out of loop for index k, and then it will also exit the loop for index j
-                } else {
-                    // check other ingredients from checkbox
+            for (let j = 0; j < recipesList[i].ingredientsList.length; j++) {
+                for (let k = 0; k < ingredientsList.length; k++) {
+                    if (recipesList[i].ingredientsList[j].toLowerCase() === ingredientsList[k].nameIngr.toLowerCase() &&
+                        ingredientsList[k].isAvailable === false) {
+                        allIngredientsPresent = false;
+                        j = recipesList[i].ingredientsList.length;
+                        break;
+                    }
                 }
             }
 
-            // move to the next ingredient from the recipes
-        }
-        // move to the next recipes in the ingredient listing
-
-        if (allIngredientsPresent) {
-            if (searchBarInput(recipesList[i])) {
+            if (allIngredientsPresent && searchBarInput(recipesList[i])) {
                 showRecipe(recipeContainer);
             } else {
-                // make the recipes disappear
                 hideRecipe(recipeContainer);
             }
-        } else {
-            // make the recipes disappear
-            hideRecipe(recipeContainer);
         }
+    };
+
+    if (document.startViewTransition) {
+        document.startViewTransition(() => doFilter());
+    } else {
+        doFilter();
     }
 }
 
