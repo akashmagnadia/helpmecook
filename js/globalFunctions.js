@@ -10,14 +10,14 @@ async function addHTMLLinesToCodeScreen(element, linesToAdd) {
 
 function hideRecipe(element) {
     element.style.maxHeight = "0px";
-    element.style.boxShadow = "unset";
+    element.style.boxShadow = "none";
     element.style.opacity = "0";
     element.style.marginBottom = "0px"
 }
 
 function showRecipe(element) {
     element.style.maxHeight = "2000px";
-    element.style.boxShadow = "3px 4px 6px 2px #979797";
+    element.style.boxShadow = "";
     element.style.opacity = "1";
     element.style.marginBottom = "15px"
 }
@@ -107,12 +107,9 @@ function showRecipeSearchBar() {
     let searchRecipe = document.getElementById("recipe_search");
     searchRecipe.style.maxHeight = "100px";
     searchRecipe.style.padding = "7px";
-    searchRecipe.style.boxShadow = "none";
     searchRecipe.style.marginBottom = "15px";
     searchRecipe.style.marginLeft = "15px";
     searchRecipe.style.marginRight = "15px";
-    searchRecipe.style.marginRight = "15px";
-    searchRecipe.style.boxShadow = "3px 4px 6px 2px #c1bebe";
 
     document.getElementById("recipe_search_form")
         .addEventListener('change', function () {

@@ -16,6 +16,7 @@ body {
     line-height: 1.5;
     background-color: #f5f5f7;
     color: #1d1d1f;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3 {
@@ -24,6 +25,7 @@ h1, h2, h3 {
     color: #1d1d1f;
     font-weight: 600;
     letter-spacing: -0.02em;
+    transition: color 0.3s ease;
 }
 
 h1 { font-size: 2.5rem; margin: 20px 0; font-weight: 700; letter-spacing: -0.04em; }
@@ -64,14 +66,26 @@ h3 { font-size: 1.3rem; }
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /*also set in javascript*/
-    transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease-in, margin-bottom 0.6s ease-in, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    /* Subtle blue-lavender underglow in light mode */
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.03),
+                0 0 40px 6px rgba(170, 190, 255, 0.20);
+    transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                opacity 0.4s ease-in,
+                margin-bottom 0.6s ease-in,
+                transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                background 0.3s ease,
+                border-color 0.3s ease;
     animation: fadeSlideUp 0.6s cubic-bezier(0.25, 1, 0.5, 1) both;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
 }
 
 .float:hover {
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.05),
+                0 0 55px 10px rgba(140, 170, 255, 0.26);
     transform: translateY(-2px);
 }
 
@@ -81,14 +95,14 @@ h3 { font-size: 1.3rem; }
     flex-shrink: 0;
     margin: clamp(10px, 2vw, 20px);
     border-radius: 18px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
     object-fit: cover;
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .floatingImg:hover {
     transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.14), 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .linkBtn {
@@ -102,9 +116,9 @@ h3 { font-size: 1.3rem; }
     line-height: 1.5;
     text-decoration: none;
     vertical-align: middle;
-
     border-radius: 10px;
     margin: 10px;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 .linkBtn:hover {
@@ -124,59 +138,116 @@ h3 { font-size: 1.3rem; }
     max-width: 100%;
 }
 
-.checkbox {
-    display: grid;
-    grid-template-columns: 1em auto;
-    gap: 0.6em;
+.chip {
+    display: inline-flex;
     align-items: center;
-    margin-bottom: 3px;
+    margin: 4px;
 }
 
-input[type="checkbox"] {
+.chip-checkbox {
+    display: none;
+}
 
-    appearance: none;
-    background-color: white;
-
-    width: 1.15em;
-    height: 1.15em;
-    border: 0.15em solid currentColor;
-    border-radius: 0.15em;
-    transform: translateY(-0.075em);
-
-    display: grid;
-    place-content: center;
+.chip-label {
+    padding: 6px 14px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #333;
+    font-size: 0.95rem;
+    font-weight: 500;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid transparent;
+    user-select: none;
 }
 
-input[type="checkbox"]::before {
-    content: "";
-    width: 0.65em;
-    height: 0.65em;
-    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-    transform: scale(0);
-    transform-origin: bottom left;
-    transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em RoyalBlue;
+.chip-label:hover {
+    background-color: rgba(65, 105, 225, 0.1);
 }
 
-input[type="checkbox"]:checked::before {
-    transform: scale(1);
+.chip-checkbox:checked + .chip-label {
+    background-color: rgba(65, 105, 225, 0.15);
+    color: RoyalBlue;
+    border: 1px solid rgba(65, 105, 225, 0.5);
+    box-shadow: 0 2px 6px rgba(65, 105, 225, 0.2);
 }
 
 #spices_checkBoxes, #vegetables_checkBoxes {
-    margin-top: 15px;
-    margin-left: 15px;
-    margin-bottom: 25px;
-    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 12px 8px 8px;
+    gap: 2px;
+}
+
+.chip-dropdown {
+    margin: 8px 15px;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.03),
+                0 0 30px 5px rgba(170, 190, 255, 0.18);
     animation: fadeSlideUp 0.6s cubic-bezier(0.25, 1, 0.5, 1) both;
     animation-delay: 0.1s;
-    /*align-self: center;*/
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.chip-dropdown:hover {
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.09), 0 3px 10px rgba(0, 0, 0, 0.04),
+                0 0 40px 7px rgba(140, 170, 255, 0.22);
+}
+
+.chip-dropdown-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 18px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #1d1d1f;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    transition: background 0.2s ease, color 0.3s ease;
+}
+
+.chip-dropdown-summary::-webkit-details-marker {
+    display: none;
+}
+
+.chip-dropdown-summary::after {
+    content: '\276F';
+    font-size: 0.75rem;
+    opacity: 0.5;
+    transform: rotate(90deg);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.2s ease;
+    display: inline-block;
+}
+
+.chip-dropdown[open] .chip-dropdown-summary::after {
+    transform: rotate(270deg);
+    opacity: 0.8;
+}
+
+.chip-dropdown-summary:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.chip-dropdown-body {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                opacity 0.3s ease;
+}
+
+.chip-dropdown-body.is-open {
+    opacity: 1;
+    /* max-height set dynamically by JS */
 }
 
 .accordion {
@@ -201,12 +272,10 @@ input[type="checkbox"]:checked::before {
     font-size: 2em;
 }
 
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .accordion_active, .accordion:hover {
     background-color: rgba(0, 0, 0, 0.04);
 }
 
-/* Style the accordion panel. Note: hidden by default */
 .ingredients_instructions {
     margin-top: 0;
     max-height: 0;
@@ -230,26 +299,19 @@ input[type="checkbox"]:checked::before {
 }
 
 .bg-image {
-    /* The image used */
     background-image: url("backgroundImage.jpg");
-
-    /* Add the blur effect */
     filter: blur(12px) saturate(150%);
-
-    /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
     position: fixed;
     top: -5%;
     left: -5%;
     height: 110%;
-    width: 110%; /* Slight oversize to prevent blurred edges from showing */
+    width: 110%;
     z-index: -1;
-
-    /*background-color: #000;*/
     opacity: 0.35;
+    transition: opacity 0.3s ease;
 }
 
 #recipe_search {
@@ -259,18 +321,23 @@ input[type="checkbox"]:checked::before {
     text-align: center;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* Subtle underglow in light mode */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 0 22px 3px rgba(170, 190, 255, 0.18);
     max-height: 0;
     padding: 0;
     font-size: 1rem;
     font-family: inherit;
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     outline: none;
+    will-change: transform, opacity;
 }
 
 #recipe_search:focus {
     background: #fff;
-    box-shadow: 0 0 0 4px rgba(65, 105, 225, 0.2);
+    box-shadow: 0 0 0 4px rgba(65, 105, 225, 0.2),
+                0 0 32px 5px rgba(140, 170, 255, 0.24);
     border-color: rgba(65, 105, 225, 0.5);
 }
 
@@ -283,4 +350,332 @@ input[type="checkbox"]:checked::before {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* ================================
+   Theme Toggle Button
+   ================================ */
+
+#theme-toggle {
+    position: fixed;
+    top: 14px;
+    right: 16px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 13px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.60);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08),
+                0 0 20px 3px rgba(170, 190, 255, 0.20);
+    color: #444;
+    font-family: inherit;
+    font-size: 0.82rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.25s, box-shadow 0.25s, color 0.25s, border-color 0.25s, transform 0.2s;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    /* No outline that looks weird */
+    outline: none;
+}
+
+#theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12),
+                0 0 32px 6px rgba(140, 170, 255, 0.28);
+    transform: translateY(-1px);
+}
+
+#theme-toggle:active {
+    transform: scale(0.96);
+}
+
+#theme-toggle .theme-icon {
+    font-size: 0.88rem;
+    line-height: 1;
+    opacity: 0.85;
+}
+
+/* On small screens, hide the text label */
+@media (max-width: 360px) {
+    #theme-toggle .theme-label {
+        display: none;
+    }
+    #theme-toggle {
+        padding: 9px 11px;
+    }
+}
+
+/* ================================
+   Dark Mode — via system preference
+   Scoped so [data-theme="light"] can override
+   ================================ */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) body {
+        background-color: #1a1a1c;
+        color: #f5f5f7;
+    }
+    :root:not([data-theme="light"]) h1,
+    :root:not([data-theme="light"]) h2,
+    :root:not([data-theme="light"]) h3 {
+        color: #f5f5f7;
+    }
+    :root:not([data-theme="light"]) .float,
+    :root:not([data-theme="light"]) .chip-dropdown {
+        background: rgba(30, 30, 32, 0.78);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 4px 15px rgba(255, 255, 255, 0.04),
+                    0 0 40px 7px rgba(70, 110, 255, 0.16);
+    }
+    :root:not([data-theme="light"]) .chip-dropdown-summary {
+        color: #f5f5f7;
+    }
+    :root:not([data-theme="light"]) .chip-dropdown-summary:hover {
+        background: rgba(255, 255, 255, 0.06);
+    }
+    :root:not([data-theme="light"]) .float:hover {
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 6px 20px rgba(255, 255, 255, 0.06),
+                    0 0 55px 12px rgba(70, 110, 255, 0.24);
+    }
+    :root:not([data-theme="light"]) .floatingImg {
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(255, 255, 255, 0.05);
+    }
+    :root:not([data-theme="light"]) .floatingImg:hover {
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 6px 16px rgba(255, 255, 255, 0.08);
+    }
+    :root:not([data-theme="light"]) .linkBtn {
+        color: #f5f5f7;
+        background-color: #333;
+    }
+    :root:not([data-theme="light"]) .linkBtn:hover {
+        background-color: #4b6ee3;
+    }
+    :root:not([data-theme="light"]) .chip-label {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #e4e4e6;
+    }
+    :root:not([data-theme="light"]) .chip-label:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+    :root:not([data-theme="light"]) .chip-checkbox:checked + .chip-label {
+        background-color: rgba(65, 105, 225, 0.25);
+        color: #a4c8ff;
+        border: 1px solid rgba(65, 105, 225, 0.6);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+    :root:not([data-theme="light"]) .accordion_active,
+    :root:not([data-theme="light"]) .accordion:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+    :root:not([data-theme="light"]) #recipe_search {
+        background: rgba(30, 30, 32, 0.8);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        color: #f5f5f7;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4),
+                    0 0 22px 4px rgba(70, 110, 255, 0.14);
+    }
+    :root:not([data-theme="light"]) #recipe_search:focus {
+        background: #2a2a2c;
+        border-color: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05),
+                    0 0 30px 5px rgba(70, 110, 255, 0.20);
+    }
+    :root:not([data-theme="light"]) #recipe_search::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+    :root:not([data-theme="light"]) .bg-image {
+        opacity: 0.15;
+    }
+    :root:not([data-theme="light"]) #theme-toggle {
+        background: rgba(38, 38, 42, 0.80);
+        border-color: rgba(255, 255, 255, 0.1);
+        color: #e0e0e4;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5),
+                    0 0 22px 4px rgba(70, 110, 255, 0.20);
+    }
+    :root:not([data-theme="light"]) #theme-toggle:hover {
+        background: rgba(50, 50, 56, 0.92);
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6),
+                    0 0 36px 7px rgba(70, 110, 255, 0.30);
+    }
+}
+
+/* ================================
+   [data-theme="dark"] — manual dark
+   ================================ */
+:root[data-theme="dark"] body {
+    background-color: #1a1a1c;
+    color: #f5f5f7;
+}
+:root[data-theme="dark"] h1,
+:root[data-theme="dark"] h2,
+:root[data-theme="dark"] h3 {
+    color: #f5f5f7;
+}
+:root[data-theme="dark"] .float,
+:root[data-theme="dark"] .chip-dropdown {
+    background: rgba(30, 30, 32, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 4px 15px rgba(255, 255, 255, 0.04),
+                0 0 40px 7px rgba(70, 110, 255, 0.16);
+}
+:root[data-theme="dark"] .chip-dropdown-summary {
+    color: #f5f5f7;
+}
+:root[data-theme="dark"] .chip-dropdown-summary:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+:root[data-theme="dark"] .float:hover {
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 6px 20px rgba(255, 255, 255, 0.06),
+                0 0 55px 12px rgba(70, 110, 255, 0.24);
+}
+:root[data-theme="dark"] .floatingImg {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+:root[data-theme="dark"] .floatingImg:hover {
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 6px 16px rgba(255, 255, 255, 0.08);
+}
+:root[data-theme="dark"] .linkBtn {
+    color: #f5f5f7;
+    background-color: #333;
+}
+:root[data-theme="dark"] .linkBtn:hover {
+    background-color: #4b6ee3;
+}
+:root[data-theme="dark"] .chip-label {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #e4e4e6;
+}
+:root[data-theme="dark"] .chip-label:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+:root[data-theme="dark"] .chip-checkbox:checked + .chip-label {
+    background-color: rgba(65, 105, 225, 0.25);
+    color: #a4c8ff;
+    border: 1px solid rgba(65, 105, 225, 0.6);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+:root[data-theme="dark"] .accordion_active,
+:root[data-theme="dark"] .accordion:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+:root[data-theme="dark"] #recipe_search {
+    background: rgba(30, 30, 32, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #f5f5f7;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4),
+                0 0 22px 4px rgba(70, 110, 255, 0.14);
+}
+:root[data-theme="dark"] #recipe_search:focus {
+    background: #2a2a2c;
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05),
+                0 0 30px 5px rgba(70, 110, 255, 0.20);
+}
+:root[data-theme="dark"] #recipe_search::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+:root[data-theme="dark"] .bg-image {
+    opacity: 0.15;
+}
+:root[data-theme="dark"] #theme-toggle {
+    background: rgba(38, 38, 42, 0.80);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #e0e0e4;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5),
+                0 0 22px 4px rgba(70, 110, 255, 0.20);
+}
+:root[data-theme="dark"] #theme-toggle:hover {
+    background: rgba(50, 50, 56, 0.92);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6),
+                0 0 36px 7px rgba(70, 110, 255, 0.30);
+}
+
+/* ================================
+   [data-theme="light"] — force light even when system is dark
+   ================================ */
+:root[data-theme="light"] body {
+    background-color: #f5f5f7;
+    color: #1d1d1f;
+}
+:root[data-theme="light"] h1,
+:root[data-theme="light"] h2,
+:root[data-theme="light"] h3 {
+    color: #1d1d1f;
+}
+:root[data-theme="light"] .float,
+:root[data-theme="light"] .chip-dropdown {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.03),
+                0 0 40px 6px rgba(170, 190, 255, 0.20);
+}
+:root[data-theme="light"] .chip-dropdown-summary {
+    color: #1d1d1f;
+}
+:root[data-theme="light"] .chip-dropdown-summary:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+:root[data-theme="light"] .float:hover {
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.05),
+                0 0 55px 10px rgba(140, 170, 255, 0.26);
+}
+:root[data-theme="light"] .floatingImg {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+:root[data-theme="light"] .chip-label {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #333;
+}
+:root[data-theme="light"] .chip-label:hover {
+    background-color: rgba(65, 105, 225, 0.1);
+}
+:root[data-theme="light"] .chip-checkbox:checked + .chip-label {
+    background-color: rgba(65, 105, 225, 0.15);
+    color: RoyalBlue;
+    border: 1px solid rgba(65, 105, 225, 0.5);
+    box-shadow: 0 2px 6px rgba(65, 105, 225, 0.2);
+}
+:root[data-theme="light"] .accordion_active,
+:root[data-theme="light"] .accordion:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+:root[data-theme="light"] #recipe_search {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #1d1d1f;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05),
+                0 0 22px 3px rgba(170, 190, 255, 0.18);
+}
+:root[data-theme="light"] #recipe_search:focus {
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(65, 105, 225, 0.2),
+                0 0 32px 5px rgba(140, 170, 255, 0.24);
+    border-color: rgba(65, 105, 225, 0.5);
+}
+:root[data-theme="light"] #recipe_search::placeholder {
+    color: #888;
+}
+:root[data-theme="light"] .bg-image {
+    opacity: 0.35;
+}
+:root[data-theme="light"] #theme-toggle {
+    background: rgba(255, 255, 255, 0.60);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #444;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08),
+                0 0 20px 3px rgba(170, 190, 255, 0.20);
+}
+:root[data-theme="light"] .linkBtn {
+    color: black;
+    background-color: #eee;
+}
+:root[data-theme="light"] .linkBtn:hover {
+    color: white;
+    background-color: RoyalBlue;
 }
