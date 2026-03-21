@@ -88,13 +88,6 @@ function ingredientExist(ingr) {
 }
 
 function showRecipeSearchBar() {
-    let searchRecipe = document.getElementById("recipe_search");
-    searchRecipe.style.maxHeight = "100px";
-    searchRecipe.style.padding = "7px";
-    searchRecipe.style.marginBottom = "15px";
-    searchRecipe.style.marginLeft = "15px";
-    searchRecipe.style.marginRight = "15px";
-
     document.getElementById("recipe_search_form")
         .addEventListener('change', function () {
         document.getElementById("recipe_search").blur()
