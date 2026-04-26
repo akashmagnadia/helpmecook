@@ -326,6 +326,11 @@ h3 { font-size: 1.3rem; }
     color: #1d1d1f;
 }
 
+.recipe-dialog[open] {
+    display: flex;
+    flex-direction: column;
+}
+
 .recipe-dialog::backdrop {
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(8px);
@@ -372,7 +377,8 @@ h3 { font-size: 1.3rem; }
 .dialog-content {
     padding: 24px;
     overflow-y: auto;
-    max-height: calc(90vh - 140px);
+    flex: 1 1 auto;
+    min-height: 0;
 }
 
 .dialog-footer {
@@ -742,6 +748,44 @@ h3 { font-size: 1.3rem; }
                 0 0 30px 6px rgba(70, 110, 255, 0.25);
 }
 
+/* Fixes for missing components in manual dark mode */
+:root[data-theme="dark"] .search-icon {
+    color: #a1a1a6;
+}
+
+:root[data-theme="dark"] .recipe-dialog {
+    background: rgba(30, 30, 32, 0.85);
+    color: #f5f5f7;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6), 0 0 50px 10px rgba(70, 110, 255, 0.2);
+}
+
+:root[data-theme="dark"] .dialog-header,
+:root[data-theme="dark"] .dialog-footer {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+:root[data-theme="dark"] .close-x {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #f5f5f7;
+}
+
+:root[data-theme="dark"] .close-x:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+:root[data-theme="dark"] .close-btn {
+    background: linear-gradient(135deg, #5c7df7 0%, #4b6ee3 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 20px rgba(75, 110, 227, 0.2);
+}
+
+:root[data-theme="dark"] .close-btn:hover {
+    background: linear-gradient(135deg, #6e8bff 0%, #5c7df7 100%);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 30px rgba(75, 110, 227, 0.3);
+}
+
 /* ================================
    [data-theme="light"] — force light even when system is dark
    ================================ */
@@ -872,6 +916,44 @@ h3 { font-size: 1.3rem; }
 :root[data-theme="light"] .linkBtn:hover {
     color: white;
     background-color: RoyalBlue;
+}
+
+/* Explicit resets for missing components in manual light mode to fix iOS Safari :not invalidation bugs */
+:root[data-theme="light"] .search-icon {
+    color: #8e8e93;
+}
+
+:root[data-theme="light"] .recipe-dialog {
+    background: rgba(255, 255, 255, 0.85);
+    color: #1d1d1f;
+    border: none;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2), 0 0 50px 10px rgba(170, 190, 255, 0.3);
+}
+
+:root[data-theme="light"] .dialog-header,
+:root[data-theme="light"] .dialog-footer {
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+:root[data-theme="light"] .close-x {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.05);
+    color: #444;
+}
+
+:root[data-theme="light"] .close-x:hover {
+    background: rgba(0, 0, 0, 0.08);
+    color: #1d1d1f;
+}
+
+:root[data-theme="light"] .close-btn {
+    background: linear-gradient(135deg, #4b6ee3 0%, #3a5edb 100%);
+    box-shadow: 0 4px 12px rgba(58, 94, 219, 0.25);
+}
+
+:root[data-theme="light"] .close-btn:hover {
+    background: linear-gradient(135deg, #5c7df7 0%, #4b6ee3 100%);
+    box-shadow: 0 8px 20px rgba(58, 94, 219, 0.35);
 }
 
 /* ================================

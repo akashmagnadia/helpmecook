@@ -1,6 +1,6 @@
 /**
  * Theme Manager — toggles between light / dark
- * Persists choice in localStorage under key 'theme'
+ * Persists choice in sessionStorage under key 'theme'
  * Defaults to system theme if no preference is saved.
  */
 (function () {
@@ -14,7 +14,7 @@
     }
 
     function getTheme() {
-        const stored = localStorage.getItem('theme');
+        const stored = sessionStorage.getItem('theme');
         if (stored === 'light' || stored === 'dark') {
             return stored;
         }
@@ -53,7 +53,7 @@
         const current = getTheme();
         const next = current === 'dark' ? 'light' : 'dark';
         
-        localStorage.setItem('theme', next);
+        sessionStorage.setItem('theme', next);
         applyTheme(next);
         updateButton(next);
     }
@@ -61,7 +61,7 @@
     // Watch for system theme changes if no explicit user preference is set
     if (window.matchMedia) {
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-            if (!localStorage.getItem('theme')) {
+            if (!sessionStorage.getItem('theme')) {
                 const newSystemTheme = e.matches ? 'dark' : 'light';
                 applyTheme(newSystemTheme);
                 updateButton(newSystemTheme);
